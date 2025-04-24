@@ -1,97 +1,101 @@
+<!DOCTYPE html>
+<html>
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>RRS INFOTECH | Company Profile</title>
+  <title>RRS INFOTECH Login</title>
   <style>
     body {
-      font-family: 'Segoe UI', sans-serif;
-      background: url('https://i.ibb.co/mDgL5FM/tech-bg.jpg') no-repeat center center fixed;
-      background-size: cover;
-      color: #fff;
       margin: 0;
-      padding: 0;
+      font-family: Arial, sans-serif;
+      background-image: url('https://i.imgur.com/VsKLX5x.jpg'); /* computer + printer bg */
+      background-size: cover;
+      background-position: center;
+      color: white;
     }
 
-    .overlay {
+    .login-container, .content-container {
+      max-width: 600px;
+      margin: 100px auto;
       background: rgba(0, 0, 0, 0.7);
-      min-height: 100vh;
-      padding: 40px 20px;
-    }
-
-    .container {
-      max-width: 1000px;
-      margin: auto;
-      background-color: rgba(255, 255, 255, 0.05);
-      border-radius: 15px;
       padding: 30px;
-      box-shadow: 0 0 15px #00cfff;
+      border-radius: 12px;
     }
 
-    h1, h2, h3 {
-      color: #00cfff;
+    h2 {
+      text-align: center;
+      color: #00ffcc;
     }
 
-    p, li {
+    input {
+      width: 100%;
+      padding: 12px;
+      margin: 10px 0;
+      border: none;
+      border-radius: 8px;
+    }
+
+    button {
+      width: 100%;
+      padding: 12px;
+      background: #00cc99;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+    .hidden {
+      display: none;
+    }
+
+    .content-container pre {
+      white-space: pre-wrap;
       line-height: 1.6;
-    }
-
-    ul {
-      margin-left: 20px;
     }
   </style>
 </head>
 <body>
-  <div class="overlay">
-    <div class="container">
-      <h1>RRS INFOTECH - Company Profile</h1>
-      
-      <h2>1. Name of the Organization</h2>
-      <p><strong>RRS INFOTECH</strong></p>
-      
-      <h2>2. Chief Functionary</h2>
-      <p><strong>Mr. Raja. R</strong> – Managing Director</p>
-      
-      <h2>3. Communication</h2>
-      <p>No. 1/1, D.K.M. College Stop, Sainathapuram, Vellore – 1.<br/>
-      Cell: 9443814410<br/>
-      E-mail: rrsinfotech1@gmail.com</p>
 
-      <h2>4. Job Nature</h2>
-      <ul>
-        <li>Election ID Card</li>
-        <li>Electoral Roll Laser Printing</li>
-        <li>TNPSC Registration Facilitation Service Provider</li>
-        <li>TNPSC Exam Hall Web Capture & Upload</li>
-        <li>SHG ID Card Work </li>
-        <li>BSNL Heavy Duty Bill Printing  </li>
-      </ul>
-
-      <h3>5. Contracts</h3>
-      <ul>
-        <li>Computer Related IT Contract</li>
-        <li>Heavy Duty Laser Printing Contract</li>
-        <li>Data Entry Work Contract</li>
-        <li>Election Photo Identity Card Contract</li>
-        <li>Electoral Roll Printing Contract</li>
-        <li>Smart ID Card Work Contract</li>
-        <li>Scanning Work Contract</li>
-        <li>Laser & Color Printing Contracts</li>
-        <li>Photo ID Works, Lamination, Xerox Contracts</li>
-      </ul>
-
-      <h3>6. Hardware Service</h3>
-      <ul>
-        <li>Computer / Printer / Xerox Machine Service</li>
-        <li>AMC (Annual Maintenance Contracts)</li>
-      </ul>
-
-      <h3>7. Rental Services</h3>
-      <ul>
-        <li>Laptop, Desktop Rental</li>
-        <li>Laser & Color Printer Rental</li>
-        <li>Xerox Machine Rental</li>
-        <li>Digital Camera Rental</li>
-      </ul>
-    </div>
+  <div class="login-container" id="login-box">
+    <h2>RRS INFOTECH Login</h2>
+    <input type="text" id="username" placeholder="Username" />
+    <input type="password" id="password" placeholder="Password" />
+    <button onclick="checkLogin()">Login</button>
   </div>
+
+  <div class="content-container hidden" id="main-content">
+    <h2>RRS INFOTECH</h2>
+    <pre>
+Name of the Organization: RRS INFOTECH
+Chief Functionary: Mr. Raja. R
+Contact Person: Managing Director
+
+Address:
+No. 1/1, D.K.M. College Stop, Sainathapuram, Vellore – 1.
+Cell: 9443814410
+Email: rrsinfotech1@gmail.com
+
+Job Nature:
+- Election ID Card
+- TNPSC Web Capture
+- Electoral Roll Laser Printing
+- BSNL Barcode Bill Printing
+- Govt Contracts: Scanning, Printing, Photo ID, Lamination
+- Rentals: Laptop, Printers, Digital Camera
+    </pre>
+  </div>
+
+  <script>
+    function checkLogin() {
+      const user = document.getElementById('username').value;
+      const pass = document.getElementById('password').value;
+      if (user === "RRS" && pass === "1234") {
+        document.getElementById("login-box").classList.add("hidden");
+        document.getElementById("main-content").classList.remove("hidden");
+      } else {
+        alert("Invalid login!");
+      }
+    }
+  </script>
 </body>
+</html>
