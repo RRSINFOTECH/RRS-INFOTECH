@@ -1,28 +1,28 @@
 <!DOCTYPE html>
 <html lang="ta-IN">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>RRS INFOTECH </title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
   <style>
     body {
       margin: 0;
       font-family: Arial, sans-serif;
-      background: #f0f0f0;
-    }
-
-    .overlay {
       background-image: url('https://www.dreamstime.com/woman-working-printing-office-using-printer-caucasian-woman-working-printing-office-using-large-format-printer-image267018562');
       background-size: cover;
       background-position: center;
+      color: #333;
+    }
+
+    .overlay {
+      background-color: rgba(255, 255, 255, 0.85);
       position: absolute;
       top: 0;
       left: 0;
       width: 100%;
       height: 100%;
-      z-index: 0;
-      filter: blur(4px);
+      z-index: 1;
     }
 
     .login-container, .content-container {
@@ -64,52 +64,21 @@
       display: none;
     }
 
-    .slideshow {
-      width: 100%;
-      height: 200px;
-      overflow: hidden;
-      border-radius: 10px;
-      margin-bottom: 20px;
+    .content-container pre {
+      white-space: pre-wrap;
+      line-height: 1.6;
+      color: #222;
     }
 
-    .slideshow img {
-      width: 100%;
-      height: 200px;
-      object-fit: cover;
-      border-radius: 10px;
-      animation: fade 6s infinite;
-    }
-
-    @keyframes fade {
-      0%   {opacity: 0}
-      25%  {opacity: 1}
-      75%  {opacity: 1}
-      100% {opacity: 0}
+    .info-icon {
+      cursor: pointer;
+      color: #007766;
+      font-size: 20px;
+      margin-left: 10px;
     }
 
     details {
       margin-bottom: 10px;
-      border: 1px solid #ccc;
-      border-radius: 10px;
-      padding: 10px;
-      background-color: #f9f9f9;
-    }
-
-    summary {
-      font-size: 18px;
-      cursor: pointer;
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      color: #007766;
-    }
-
-    .fas {
-      color: #00aaff;
-    }
-
-    details p {
-      margin-left: 20px;
     }
   </style>
 </head>
@@ -124,16 +93,11 @@
   </div>
 
   <div class="content-container hidden" id="main-content">
-    <div class="slideshow">
-      <img id="slide-img" src="https://cdn.pixabay.com/photo/2016/02/19/10/00/office-1209640_1280.jpg" alt="Slide" />
-    </div>
     <h2>RRS INFOTECH</h2>
-
     <details>
       <summary><i class="fas fa-industry"></i> Name of the Foundry</summary>
       <p>R. RAJA</p>
     </details>
-
     <details>
       <summary><i class="fas fa-briefcase"></i> Job Nature</summary>
       <p>- Election ID Card</p>
@@ -143,7 +107,6 @@
       <p>- Govt Contracts: Scanning, Printing, Photo ID, Lamination</p>
       <p>- Rentals: Laptop, Printers, Digital Camera</p>
     </details>
-
     <details>
       <summary><i class="fas fa-map-marker-alt"></i> Address</summary>
       <p>No. 1/1, D.K.M. College Stop, Sainathapuram, Vellore – 1.</p>
@@ -159,24 +122,9 @@
       if (user === "RRS" && pass === "1234") {
         document.getElementById("login-box").classList.add("hidden");
         document.getElementById("main-content").classList.remove("hidden");
-        startSlideshow();
       } else {
         alert("Invalid login!");
       }
-    }
-
-    const images = [
-      "https://cdn.pixabay.com/photo/2016/02/19/10/00/office-1209640_1280.jpg",
-      "https://cdn.pixabay.com/photo/2016/03/27/21/59/keyboard-1284725_1280.jpg",
-      "https://cdn.pixabay.com/photo/2017/08/01/08/29/printer-2561799_1280.jpg"
-    ];
-
-    let index = 0;
-    function startSlideshow() {
-      setInterval(() => {
-        index = (index + 1) % images.length;
-        document.getElementById("slide-img").src = images[index];
-      }, 4000);
     }
   </script>
 </body>
