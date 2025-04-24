@@ -125,6 +125,36 @@
       } else {
         alert("Invalid login!");
       }
+      <script>
+  const bgImages = [
+    "https://cdn.pixabay.com/photo/2015/06/24/16/36/office-820390_1280.jpg",
+    "https://cdn.pixabay.com/photo/2016/11/21/15/47/computer-1846056_1280.jpg",
+    "https://cdn.pixabay.com/photo/2016/11/19/14/00/keyboard-1837086_1280.jpg"
+  ];
+
+  let bgIndex = 0;
+
+  function rotateBackground() {
+    setInterval(() => {
+      bgIndex = (bgIndex + 1) % bgImages.length;
+      document.body.style.backgroundImage = `url('${bgImages[bgIndex]}')`;
+    }, 5000); // Change every 5 seconds
+  }
+
+  // Start background slideshow as soon as login is successful
+  function checkLogin() {
+    const user = document.getElementById('username').value;
+    const pass = document.getElementById('password').value;
+    if (user === "RRS" && pass === "1234") {
+      document.getElementById("login-box").classList.add("hidden");
+      document.getElementById("main-content").classList.remove("hidden");
+      startSlideshow();        // Image box slideshow
+      rotateBackground();      // Full background slideshow
+    } else {
+      alert("Invalid login!");
+    }
+  }
+</script>
     }
   </script>
 </body>
