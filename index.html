@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>RRS INFOTECH </title>
+  <title>RRS INFOTECH Centre</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
   <style>
     body {
@@ -86,7 +86,7 @@
   <div class="overlay"></div>
 
   <div class="login-container" id="login-box">
-    <h2>RRS INFOTECH </h2>
+    <h2>RRS INFOTECH Centre</h2>
     <input type="text" id="username" placeholder="Username" />
     <input type="password" id="password" placeholder="Password" />
     <button onclick="checkLogin()">Login</button>
@@ -125,36 +125,6 @@
       } else {
         alert("Invalid login!");
       }
-      <script>
-  const bgImages = [
-    "https://cdn.pixabay.com/photo/2015/06/24/16/36/office-820390_1280.jpg",
-    "https://cdn.pixabay.com/photo/2016/11/21/15/47/computer-1846056_1280.jpg",
-    "https://cdn.pixabay.com/photo/2016/11/19/14/00/keyboard-1837086_1280.jpg"
-  ];
-
-  let bgIndex = 0;
-
-  function rotateBackground() {
-    setInterval(() => {
-      bgIndex = (bgIndex + 1) % bgImages.length;
-      document.body.style.backgroundImage = `url('${bgImages[bgIndex]}')`;
-    }, 5000); // Change every 5 seconds
-  }
-
-  // Start background slideshow as soon as login is successful
-  function checkLogin() {
-    const user = document.getElementById('username').value;
-    const pass = document.getElementById('password').value;
-    if (user === "RRS" && pass === "1234") {
-      document.getElementById("login-box").classList.add("hidden");
-      document.getElementById("main-content").classList.remove("hidden");
-      startSlideshow();        // Image box slideshow
-      rotateBackground();      // Full background slideshow
-    } else {
-      alert("Invalid login!");
-    }
-  }
-</script>
     }
   </script>
 </body>
